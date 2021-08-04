@@ -14,7 +14,7 @@ describe('Destination', () => {
     expect(Destination).to.be.a('function');
   });
 
-  it('should intialize a traveler object', () => {
+  it('should intialize a destination object', () => {
     expect(destination).to.be.an.instanceof(Destination)
     expect(destination.id).to.equal(1)
     expect(destination.destination).to.equal('Lima, Peru')
