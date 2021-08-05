@@ -1,3 +1,4 @@
+
 class Trip {
   constructor(trip) {
     this.id = trip.id
@@ -8,6 +9,13 @@ class Trip {
     this.duration = trip.duration
     this.status = trip.status
     this.suggestedActivities = trip.suggestedActivities
+  }
+
+  calculateTripCost(destination) {
+    const duration = this.duration
+    const travlerAmount = this.travelers
+    const travelCost = destination.calculateTravelCost(duration, travlerAmount)
+    return (travelCost * .10) + travelCost
   }
 }
 
