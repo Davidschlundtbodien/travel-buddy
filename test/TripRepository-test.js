@@ -20,4 +20,9 @@ describe('TripRepository', () => {
     expect(tripRepo.trips[1].travelers).to.equal(5)
   });
 
+  it('should find trips for a specific userID', () => {
+    let userTrips = tripRepo.filterUserTrips(24)
+    expect(userTrips.length).to.equal(3)
+  });
+
 });

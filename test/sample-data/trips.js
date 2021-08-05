@@ -65,7 +65,7 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 8,
-    "userID": 36,
+    "userID": 24,
     "destinationID": 39,
     "travelers": 6,
     "date": "2022/02/07",
@@ -83,7 +83,7 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 10,
-    "userID": 9,
+    "userID": 24,
     "destinationID": 50,
     "travelers": 6,
     "date": "2022/07/23",
