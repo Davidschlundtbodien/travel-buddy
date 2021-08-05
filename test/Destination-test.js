@@ -23,4 +23,9 @@ describe('Destination', () => {
     expect(destination.image).to.equal("https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80")
     expect(destination.alt).to.equal("overview of city buildings with a clear sky")
   })
+
+  it('should return a cost base on duration', () => {
+    const cost = destination.calculateTravelCost(6, 2)
+    expect(cost).to.equal(1220)
+  });
 });
