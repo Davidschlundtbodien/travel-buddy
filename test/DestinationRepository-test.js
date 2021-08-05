@@ -20,4 +20,9 @@ describe('DestinationRepository', () => {
     expect(destinationRepo.destinations[1].estimatedLodgingCostPerDay).to.equal(100)
   });
 
+  it('should be able to find a destination based on ID', () => {
+    const destination = destinationRepo.findDestination(5)
+    expect(destination.destination).to.equal("Madrid, Spain")
+  });
+
 });
