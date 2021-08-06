@@ -38,8 +38,8 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 5,
-    "userID": 42,
-    "destinationID": 29,
+    "userID": 1,
+    "destinationID": 6,
     "travelers": 3,
     "date": "2022/04/30",
     "duration": 18,
@@ -47,8 +47,8 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 6,
-    "userID": 29,
-    "destinationID": 35,
+    "userID": 1,
+    "destinationID": 7,
     "travelers": 3,
     "date": "2022/06/29",
     "duration": 9,

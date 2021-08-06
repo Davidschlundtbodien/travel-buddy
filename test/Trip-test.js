@@ -29,8 +29,7 @@ describe('Trip', () => {
   });
 
   it('should calculate travel cost with fee', () => {
-    const destination = destinationRepo.findDestination(trip.destinationID)
-    const totalCost = trip.calculateTripCost(destination)
+    const totalCost = trip.calculateTripCost(destinationRepo)
     expect(totalCost).to.equal(2189)
   });
 });
