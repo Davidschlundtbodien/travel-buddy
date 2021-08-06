@@ -7,6 +7,10 @@ class Destination {
     this.image = destination.image
     this.alt = destination.alt
   }
+
+  calculateTravelCost(days, travlerAmount) {
+    return this.estimatedLodgingCostPerDay * days + this.estimatedFlightCostPerPerson * travlerAmount
+  }
 }
 
 export default Destination;

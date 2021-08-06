@@ -2,7 +2,7 @@ const trips = [
   {
   "id": 1,
   "userID": 44,
-  "destinationID": 49,
+  "destinationID": 3,
   "travelers": 1,
   "date": "2022/09/16",
   "duration": 8,
@@ -38,8 +38,8 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 5,
-    "userID": 42,
-    "destinationID": 29,
+    "userID": 1,
+    "destinationID": 6,
     "travelers": 3,
     "date": "2022/04/30",
     "duration": 18,
@@ -47,8 +47,8 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 6,
-    "userID": 29,
-    "destinationID": 35,
+    "userID": 1,
+    "destinationID": 7,
     "travelers": 3,
     "date": "2022/06/29",
     "duration": 9,
@@ -65,7 +65,7 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 8,
-    "userID": 36,
+    "userID": 24,
     "destinationID": 39,
     "travelers": 6,
     "date": "2022/02/07",
@@ -83,7 +83,7 @@ const trips = [
     "suggestedActivities": []
   }, {
     "id": 10,
-    "userID": 9,
+    "userID": 24,
     "destinationID": 50,
     "travelers": 6,
     "date": "2022/07/23",
