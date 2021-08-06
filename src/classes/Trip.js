@@ -11,7 +11,8 @@ class Trip {
     this.suggestedActivities = trip.suggestedActivities
   }
 
-  calculateTripCost(destination) {
+  calculateTripCost(destinationRepo) {
+    const destination = destinationRepo.findDestination(this.destinationID)
     const duration = this.duration
     const travlerAmount = this.travelers
     const travelCost = destination.calculateTravelCost(duration, travlerAmount)
