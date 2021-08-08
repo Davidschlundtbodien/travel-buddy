@@ -8,3 +8,10 @@ import './css/base.scss';
 import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
+
+import './apiRequests.js'
+import './classes/Traveler.js'
+import './classes/Trip.js'
+import './classes/Destination.js'
+import './classes/DestinationRepository.js'
+import './classes/TripRepository.js'
