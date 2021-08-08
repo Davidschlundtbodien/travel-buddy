@@ -1,4 +1,5 @@
 import Traveler from './classes/Traveler'
+import Trip from './classes/Trip'
 import DestinationRepository from './classes/DestinationRepository'
 import TripRepository from './classes/TripRepository'
 
@@ -35,4 +36,27 @@ let updateData = (data) => {
     tripRepo = new TripRepository(data[1].trips)
 }
 
-export { destinationRepo, tripRepo, traveler, travelerLogin}
+//POST
+
+const sendTripInfo = (trip) => {
+  return fetch('http://localhost:3001/api/v1/trips', {
+    method: 'POST',
+    body: JSON.stringify(trip),
+    headers: {
+  	 'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(tripData => {
+    traveler.trips.push(new Trip(tripData.newTrip))
+    console.log(tripData.message)
+  })
+  .catch(err => console.log(err));
+}
+
+
+let trip = {id: 8000, userID: 2, destinationID: 3, travelers: 2, date:'2022/3/20', duration: 6, status: 'pending', suggestedActivities: []}
+
+setTimeout(function() {sendTripInfo(trip)}, 4000);
+
+export { destinationRepo, tripRepo, traveler, travelerLogin, sendTripInfo}
