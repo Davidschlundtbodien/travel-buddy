@@ -10,6 +10,7 @@ import './images/turing-logo.png'
 console.log('This is the JavaScript entry file - your code begins here.');
 
 import './apiRequests.js'
+import './domUpdates.js'
 import './classes/Traveler.js'
 import './classes/Trip.js'
 import './classes/Destination.js'
