@@ -27,7 +27,7 @@ let travelerLogin = (id) => {
 
 Promise.all([fetchData('destinations'), fetchData('trips')]).then((data)=> {
     updateData(data)
-    travelerLogin(2)
+    travelerLogin(29)
 })
 
 let updateData = (data) => {
