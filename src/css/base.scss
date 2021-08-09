@@ -1,4 +1,5 @@
 @use '_colors' as *;
+@use '_modal' as *;
 
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 
-header {
+.nav-header {
   background: $blue-steel;
   color: $light-blue;
   height: 10%;
@@ -71,7 +72,7 @@ main {
     height: 70%;
     width: 100%;
   }
-  
+
   .trip-description{
     display: flex;
     justify-content: space-between;
