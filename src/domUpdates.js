@@ -1,4 +1,7 @@
 import {destinationRepo, tripRepo, traveler, travelerLogin} from './apiRequests'
+import MicroModal from 'micromodal';
+
+MicroModal.init();
 
 let today = '2021/08/11'
 
