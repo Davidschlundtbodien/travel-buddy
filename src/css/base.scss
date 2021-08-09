@@ -45,6 +45,39 @@ main {
     color: $light-blue;
     margin: 0 5%;
     height: 25%;
-    width: auto;;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.trip-gallery {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.trip-card {
+  margin: 0 1em;
+  height: 90%;
+  min-width: 18em;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 70%;
+    width: 100%;
+  }
+  
+  .trip-description{
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: .9em;
+    }
   }
 }
