@@ -16,6 +16,8 @@ const startDate = document.getElementById('startDate')
 const tripDuration = document.getElementById('tripDuration')
 const travelerAmount = document.getElementById('travelerAmount')
 const formSubmitButton = document.getElementById('formSubmit')
+const xCloseButton = document.getElementById('xClose')
+const closeButton = document.getElementById('closeButton')
 
 
 
@@ -31,6 +33,8 @@ const updateDom = () => {
   startDate.addEventListener('keyup', checkForm)
   tripDuration.addEventListener('keyup', checkForm)
   travelerAmount.addEventListener('keyup', checkForm)
+  xCloseButton.addEventListener('click', clearValues)
+  closeButton.addEventListener('click', clearValues)
 }
 
 setTimeout(() => {
@@ -114,6 +118,7 @@ const clearValues = () => {
   startDate.value = "";
   tripDuration.value = "";
   travelerAmount.value = "";
+  formSubmitButton.disabled = true;
 };
 
 const checkForm = () => {
