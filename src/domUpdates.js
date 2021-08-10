@@ -1,4 +1,4 @@
-import {destinationRepo, tripRepo, traveler, travelerLogin} from './apiRequests'
+import {destinationRepo, tripRepo, traveler, travelerLogin, sendTripInfo} from './apiRequests'
 import MicroModal from 'micromodal';
 
 MicroModal.init();
@@ -12,6 +12,13 @@ const pendingGallery = document.getElementById('pendingGallery')
 const upcomingGallery = document.getElementById('upcomingGallery')
 const pastGallery = document.getElementById('pastGallery')
 const destinationOptions = document.getElementById('destinationOptions')
+const startDate = document.getElementById('startDate')
+const tripDuration = document.getElementById('tripDuration')
+const travelerAmount = document.getElementById('travelerAmount')
+const formSubmitButton = document.getElementById('formSubmit')
+
+
+
 
 
 const updateDom = () => {
@@ -20,6 +27,7 @@ const updateDom = () => {
   updateTripGallery(upcomingGallery, 'upcoming');
   updateTripGallery(pastGallery, 'past');
   setDestinationOptions();
+  formSubmitButton.addEventListener('click', submitTrip)
 }
 
 setTimeout(() => {
@@ -73,7 +81,26 @@ const buildTripCard = (trip, gallery) => {
 const setDestinationOptions = () => {
   destinationOptions.innerHTML = "";
   destinationRepo.destinations.forEach(destination => {
-    destinationOptions.innerHTML += `<option value="${destination.destination}">${destination.destination}</option>`
+    destinationOptions.innerHTML += `<option value="${destination.id}">${destination.destination}</option>`
   });
+
+}
+
+const submitTrip = () => {
+  event.preventDefault();
+  let trip = {
+    id: Date.now(),
+    userID: traveler.id,
+    destinationID: parseInt(destinationOptions.value),
+    travelers: parseInt(travelerAmount.value),
+    date: startDate.value.split("-").join("/"),
+    duration: parseInt(tripDuration.value),
+    status: 'pending',
+    suggestedActivities:[]
+  }
+  sendTripInfo(trip)
+  setTimeout(() => {
+    updateTripGallery(pendingGallery, 'pending')
+  }, 70);
 
 }
