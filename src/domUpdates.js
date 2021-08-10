@@ -28,6 +28,9 @@ const updateDom = () => {
   updateTripGallery(pastGallery, 'past');
   setDestinationOptions();
   formSubmitButton.addEventListener('click', submitTrip)
+  startDate.addEventListener('keyup', checkForm)
+  tripDuration.addEventListener('keyup', checkForm)
+  travelerAmount.addEventListener('keyup', checkForm)
 }
 
 setTimeout(() => {
@@ -98,9 +101,28 @@ const submitTrip = () => {
     status: 'pending',
     suggestedActivities:[]
   }
+  clearValues()
   sendTripInfo(trip)
   setTimeout(() => {
     updateTripGallery(pendingGallery, 'pending')
+    updateHeader()
   }, 70);
 
 }
+
+const clearValues = () => {
+  startDate.value = "";
+  tripDuration.value = "";
+  travelerAmount.value = "";
+};
+
+const checkForm = () => {
+  let dateCheck = startDate.value.length > 0;
+  let durationCheck = parseInt(tripDuration.value) > 0;
+  let travelersCheck = parseInt(travelerAmount.value) > 0;
+  if (dateCheck && durationCheck && travelersCheck) {
+    formSubmitButton.disabled = false;
+  } else {
+    formSubmitButton.disabled = true;
+  }
+};
