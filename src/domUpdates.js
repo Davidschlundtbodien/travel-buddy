@@ -3,6 +3,7 @@ import MicroModal from 'micromodal';
 import Trip from './classes/Trip';
 
 MicroModal.init();
+MicroModal.show('modal-2')
 
 let today = '2021/08/11'
 
