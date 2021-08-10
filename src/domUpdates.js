@@ -3,15 +3,18 @@ import MicroModal from 'micromodal';
 import Trip from './classes/Trip';
 
 MicroModal.init();
+MicroModal.show('modal-2')
 
 let today = '2021/08/11'
 
+// INDEX ELEMENTS
 const totalSpent = document.getElementById('totalSpent')
 const travelerName = document.getElementById('travelerName')
 const bookTripButton = document.getElementById('bookTripButton')
 const pendingGallery = document.getElementById('pendingGallery')
 const upcomingGallery = document.getElementById('upcomingGallery')
 const pastGallery = document.getElementById('pastGallery')
+// FORM ELEMENTS
 const destinationOptions = document.getElementById('destinationOptions')
 const startDate = document.getElementById('startDate')
 const tripDuration = document.getElementById('tripDuration')
@@ -20,11 +23,16 @@ const formSubmitButton = document.getElementById('formSubmit')
 const xCloseButton = document.getElementById('xClose')
 const closeButton = document.getElementById('closeButton')
 const getEstimateButton = document.getElementById('getEstimate')
+// LOGIN ELEMENTS
+const userNameInput = document.getElementById('userName')
+const passwordInput = document.getElementById('password')
+const loginButton = document.getElementById('login')
 
-
-
-
-
+const intLogin = () => {
+  userNameInput.addEventListener('keyup', checkLogin)
+  passwordInput.addEventListener('keyup', checkLogin)
+  loginButton.addEventListener('click', loginUser)
+}
 
 const updateDom = () => {
   updateHeader()
@@ -42,7 +50,7 @@ const updateDom = () => {
 }
 
 setTimeout(() => {
-  updateDom()
+  intLogin()
 }, 70);
 
 const updateHeader = () => {
@@ -155,4 +163,24 @@ const getTripEstimate = () => {
 
   getEstimateButton.innerText = `$${trip.calculateTripCost(destinationRepo)}`
 
+}
+
+const checkLogin = () => {
+  let id = parseInt(userNameInput.value.split("traveler")[1])
+  let userNameCheck = (id <= 50 && id > 0)
+  let passwordCheck = passwordInput.value === 'travel'
+  if (userNameCheck && passwordCheck) {
+    loginButton.disabled = false;
+  } else {
+    loginButton.disabled = true;
+  }
+}
+
+const loginUser = () => {
+  event.preventDefault()
+  let id = parseInt(userNameInput.value.split("traveler")[1])
+  travelerLogin(id)
+  setTimeout(() => {
+    updateDom()
+  }, 70);
 }
