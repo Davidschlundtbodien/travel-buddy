@@ -99,6 +99,11 @@
   color: $light-blue;
 }
 
+.modal__btn-primary:disabled {
+  background-color: $light-blue;
+  color: $deep-purple;
+}
+
 
 
 /**************************\
