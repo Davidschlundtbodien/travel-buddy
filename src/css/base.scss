@@ -82,3 +82,24 @@ main {
     }
   }
 }
+
+.trip-form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  label {
+    margin: .5em;
+  }
+
+  input {
+    text-align: center;
+    margin: .3em;
+    width: 50%;
+  }
+
+  button {
+    margin-top: 1em;
+  }
+}

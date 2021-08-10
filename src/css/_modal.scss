@@ -1,3 +1,5 @@
+@use '_colors' as *;
+
 .modal {
   font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
 }
@@ -15,7 +17,7 @@
 }
 
 .modal__container {
-  background-color: #fff;
+  background-color: $off-white;
   padding: 30px;
   max-width: 500px;
   max-height: 100vh;
@@ -36,7 +38,7 @@
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.25;
-  color: #00449e;
+  color: $deep-purple;
   box-sizing: border-box;
 }
 
@@ -51,7 +53,12 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   line-height: 1.5;
-  color: rgba(0,0,0,.8);
+  color: $blue-steel;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
 }
 
 .modal__btn {
@@ -60,8 +67,8 @@
   padding-right: 1rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
-  background-color: #e6e6e6;
-  color: rgba(0,0,0,.8);
+  background-color: $off-white;
+  color: $blue-steel;
   border-radius: .25rem;
   border-style: none;
   border-width: 0;
@@ -88,8 +95,8 @@
 }
 
 .modal__btn-primary {
-  background-color: #00449e;
-  color: #fff;
+  background-color: $deep-purple;
+  color: $light-blue;
 }
 
 

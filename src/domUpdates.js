@@ -11,13 +11,15 @@ const bookTripButton = document.getElementById('bookTripButton')
 const pendingGallery = document.getElementById('pendingGallery')
 const upcomingGallery = document.getElementById('upcomingGallery')
 const pastGallery = document.getElementById('pastGallery')
+const destinationOptions = document.getElementById('destinationOptions')
+
 
 const updateDom = () => {
   updateHeader()
   updateTripGallery(pendingGallery, 'pending');
   updateTripGallery(upcomingGallery, 'upcoming');
   updateTripGallery(pastGallery, 'past');
-
+  setDestinationOptions();
 }
 
 setTimeout(() => {
@@ -66,4 +68,12 @@ const buildTripCard = (trip, gallery) => {
       <p>${trip.date}</p>
     </div>
   </article>`
+}
+
+const setDestinationOptions = () => {
+  destinationOptions.innerHTML = "";
+  destinationRepo.destinations.forEach(destination => {
+    destinationOptions.innerHTML += `<option value="${destination.destination}">${destination.destination}</option>`
+  });
+
 }
