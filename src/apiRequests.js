@@ -49,6 +49,7 @@ const sendTripInfo = (trip) => {
   .then(response => response.json())
   .then(tripData => {
     traveler.trips.push(new Trip(tripData.newTrip))
+    traveler.calculateTotalSpent(destinationRepo)
     console.log(tripData.message)
   })
   .catch(err => console.log(err));
