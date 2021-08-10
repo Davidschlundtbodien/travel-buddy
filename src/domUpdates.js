@@ -114,6 +114,7 @@ const clearValues = () => {
   startDate.value = "";
   tripDuration.value = "";
   travelerAmount.value = "";
+  formSubmitButton.disabled = true;
 };
 
 const checkForm = () => {
