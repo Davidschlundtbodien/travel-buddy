@@ -1,0 +1,19 @@
+@use '_mixins' as *;
+
+.trip-form {
+  @include flexSetup (column, space-around, center);
+
+  label {
+    margin: .5em;
+  }
+
+  input {
+    text-align: center;
+    margin: .3em;
+    width: 50%;
+  }
+
+  button {
+    margin-top: 1em;
+  }
+}

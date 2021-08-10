@@ -1,0 +1,20 @@
+@use '_mixins' as *;
+
+.trip-card {
+  margin: 0 1em;
+  height: 90%;
+  min-width: 18em;
+  @include flexSetup (column, stretch, stretch);
+
+  img {
+    @include setHeightWidth (70%, 100%);
+  }
+
+  .trip-description{
+    @include flexSetup (row, space-between, stretch);
+
+    p {
+      font-size: .9em;
+    }
+  }
+}
