@@ -1,11 +1,13 @@
 @use '_colors' as *;
 @use '_modal' as *;
+@use '_tripCard' as *;
+@use '_tripForm' as *;
+@use '_mixins' as *;
 
 
 body {
   background: $deep-purple;
-  width: auto;
-  height: 100vh;
+  @include setHeightWidth (100vh, auto);
   margin: 0;
   font-family: Verdana;
 }
@@ -14,11 +16,8 @@ body {
 .nav-header {
   background: $blue-steel;
   color: $light-blue;
-  height: 10%;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @include setHeightWidth (10%, 100%);
+  @include flexSetup (row, space-evenly, center);
 
   button {
     background: none;
@@ -34,72 +33,21 @@ body {
 }
 
 main {
-  height: 90%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  @include setHeightWidth (90%, 100%);
+  @include flexSetup (column, space-evenly, stretch);
   text-align: center;
 
   section {
     background: $blue-steel;
     color: $light-blue;
     margin: 0 5%;
-    height: 25%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    @include setHeightWidth (25%, auto);
+    @include flexSetup (column, space-evenly, center);
   }
 }
 
 .trip-gallery {
-  height: 80%;
-  width: 100%;
+  @include setHeightWidth (80%, 100%);
   display: flex;
   overflow-x: scroll;
-}
-
-.trip-card {
-  margin: 0 1em;
-  height: 90%;
-  min-width: 18em;
-  display: flex;
-  flex-direction: column;
-
-  img {
-    height: 70%;
-    width: 100%;
-  }
-
-  .trip-description{
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      font-size: .9em;
-    }
-  }
-}
-
-.trip-form {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-  label {
-    margin: .5em;
-  }
-
-  input {
-    text-align: center;
-    margin: .3em;
-    width: 50%;
-  }
-
-  button {
-    margin-top: 1em;
-  }
 }
