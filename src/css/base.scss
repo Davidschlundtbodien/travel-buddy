@@ -17,7 +17,7 @@ body {
   background: $blue-steel;
   color: $light-blue;
   @include setHeightWidth (10%, 100%);
-  @include flexSetup (row, space-evenly, center);
+  @include flexSetup (row, space-around, center);
 
   button {
     background: none;
@@ -27,21 +27,27 @@ body {
     font-style: oblique;
   }
 
+  h1 {
+    margin: 10%
+  }
+
   div {
+    margin: 2%;
     text-align: center;
   }
 }
 
 main {
   @include setHeightWidth (90%, 100%);
-  @include flexSetup (column, space-evenly, stretch);
+  @include flexSetup (column, space-between, stretch);
   text-align: center;
 
   section {
+    border-radius: 2%;
     background: $blue-steel;
     color: $light-blue;
-    margin: 0 5%;
-    @include setHeightWidth (25%, auto);
+    margin: 5%;
+    @include setHeightWidth (30%, auto);
     @include flexSetup (column, space-evenly, center);
   }
 }
@@ -50,4 +56,11 @@ main {
   @include setHeightWidth (80%, 100%);
   display: flex;
   overflow-x: scroll;
+}
+
+@media (min-height: 812px) {
+  main {
+    @include setHeightWidth (auto, 100%);
+    @include flexSetup (column, stretch, stretch);
+  }
 }
