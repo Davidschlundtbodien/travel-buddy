@@ -142,6 +142,7 @@ const checkForm = () => {
   if (dateCheck && durationCheck && travelersCheck) {
     formSubmitButton.disabled = false;
     getEstimateButton.disabled = false;
+    getEstimateButton.innerText = 'Get Estimate';
   } else {
     formSubmitButton.disabled = true;
     getEstimateButton.disabled = true;
@@ -162,7 +163,7 @@ const getTripEstimate = () => {
   })
 
   getEstimateButton.innerText = `$${trip.calculateTripCost(destinationRepo)}`
-
+  getEstimateButton.disabled = true;
 }
 
 const checkLogin = () => {
