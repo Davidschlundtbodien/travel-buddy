@@ -1,5 +1,6 @@
 import {destinationRepo, tripRepo, traveler, travelerLogin, sendTripInfo} from './apiRequests'
 import MicroModal from 'micromodal';
+import Trip from './classes/Trip';
 
 MicroModal.init();
 
@@ -18,6 +19,8 @@ const travelerAmount = document.getElementById('travelerAmount')
 const formSubmitButton = document.getElementById('formSubmit')
 const xCloseButton = document.getElementById('xClose')
 const closeButton = document.getElementById('closeButton')
+const getEstimateButton = document.getElementById('getEstimate')
+
 
 
 
@@ -35,6 +38,7 @@ const updateDom = () => {
   travelerAmount.addEventListener('keyup', checkForm)
   xCloseButton.addEventListener('click', clearValues)
   closeButton.addEventListener('click', clearValues)
+  getEstimateButton.addEventListener('click', getTripEstimate)
 }
 
 setTimeout(() => {
@@ -119,6 +123,8 @@ const clearValues = () => {
   tripDuration.value = "";
   travelerAmount.value = "";
   formSubmitButton.disabled = true;
+  getEstimateButton.disabled = true;
+  getEstimateButton.innerText = 'Get Estimate'
 };
 
 const checkForm = () => {
@@ -127,7 +133,26 @@ const checkForm = () => {
   let travelersCheck = parseInt(travelerAmount.value) > 0;
   if (dateCheck && durationCheck && travelersCheck) {
     formSubmitButton.disabled = false;
+    getEstimateButton.disabled = false;
   } else {
     formSubmitButton.disabled = true;
+    getEstimateButton.disabled = true;
   }
 };
+
+const getTripEstimate = () => {
+  event.preventDefault();
+  let trip = new Trip({
+    id: Date.now(),
+    userID: traveler.id,
+    destinationID: parseInt(destinationOptions.value),
+    travelers: parseInt(travelerAmount.value),
+    date: startDate.value.split("-").join("/"),
+    duration: parseInt(tripDuration.value),
+    status: 'pending',
+    suggestedActivities:[]
+  })
+
+  getEstimateButton.innerText = `$${trip.calculateTripCost(destinationRepo)}`
+
+}
