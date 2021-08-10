@@ -1,9 +1,9 @@
 @use '_mixins' as *;
 
 .trip-card {
-  margin: 0 1em;
-  height: 90%;
-  min-width: 18em;
+  padding: 1em;
+  height: 10em;
+  min-width: 17em;
   @include flexSetup (column, stretch, stretch);
 
   img {
