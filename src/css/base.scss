@@ -1,4 +1,5 @@
 @use '_colors' as *;
+@use '_modal' as *;
 
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 
-header {
+.nav-header {
   background: $blue-steel;
   color: $light-blue;
   height: 10%;
@@ -71,7 +72,7 @@ main {
     height: 70%;
     width: 100%;
   }
-  
+
   .trip-description{
     display: flex;
     justify-content: space-between;
@@ -79,5 +80,26 @@ main {
     p {
       font-size: .9em;
     }
+  }
+}
+
+.trip-form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  label {
+    margin: .5em;
+  }
+
+  input {
+    text-align: center;
+    margin: .3em;
+    width: 50%;
+  }
+
+  button {
+    margin-top: 1em;
   }
 }

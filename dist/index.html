@@ -7,63 +7,67 @@
   <title>Webpack Starter Kit</title>
 </head>
 <body>
-  <header>
+  <header class="nav-header">
     <div>
       <p>Total Spent</p>
       <p id="totalSpent">$50234</p>
     </div>
     <h1 id="travelerName">Traveler Name</h1>
     <nav>
-      <button id="bookTripButton" type="button" name="button">Book a trip</button>
+      <button id="bookTripButton" type="button" name="button" data-micromodal-trigger="modal-1">Book a trip</button>
     </nav>
   </header>
   <main>
     <section>
       <h2>Pending Trips</h2>
       <div class="trip-gallery" id="pendingGallery">
-        <article class="trip-card">
-          <img src="https://www.travelmanagers.com.au/wp-content/uploads/2012/08/AdobeStock_254529936_Railroad-to-Denali-National-Park-Alaska_750x500.jpg" alt="mountians">
-          <div class="trip-description">
-            <p>Destination</p>
-            <p>Departure Date</p>
-          </div>
-        </article>
-        <article class="trip-card">
-          <img src="https://www.travelmanagers.com.au/wp-content/uploads/2012/08/AdobeStock_254529936_Railroad-to-Denali-National-Park-Alaska_750x500.jpg" alt="mountians">
-          <div class="trip-description">
-            <p>Destination</p>
-            <p>Departure Date</p>
-          </div>
-        </article>
-        <article class="trip-card">
-          <img src="https://www.travelmanagers.com.au/wp-content/uploads/2012/08/AdobeStock_254529936_Railroad-to-Denali-National-Park-Alaska_750x500.jpg" alt="mountians">
-          <div class="trip-description">
-            <p>Destination</p>
-            <p>Departure Date</p>
-          </div>
-        </article>
-        <article class="trip-card">
-          <img src="https://www.travelmanagers.com.au/wp-content/uploads/2012/08/AdobeStock_254529936_Railroad-to-Denali-National-Park-Alaska_750x500.jpg" alt="mountians">
-          <div class="trip-description">
-            <p>Destination</p>
-            <p>Departure Date</p>
-          </div>
-        </article>
+        <!-- Pending Trips load here -->
       </div>
     </section>
     <section>
       <h2>Upcoming Trips</h2>
       <div class="trip-gallery" id="upcomingGallery">
-
+        <!-- Upcoming Trips load here -->
       </div>
     </section>
     <section>
       <h2>Past Trips</h2>
       <div class="trip-gallery" id="pastGallery">
-
+        <!-- Past Trips load here -->
       </div>
     </section>
   </main>
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+        <h2 class="modal__title" id="modal-1-title">
+          Book A Trip
+        </h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+      </header>
+        <main class="modal__content" id="modal-1-content">
+          <form class="trip-form">
+            <label for="destinations">Choose a Destination</label>
+            <select class="destination-options" id="destinationOptions" name="destinations" required>
+              <!-- Options load here -->
+            </select>
+            <label for="date">What Date would you like to leave?</label>
+            <input type="date" name="date" value="" required>
+            <label for="duration">How long will you be gone?</label>
+            <input type="number" name="duration" value="" required>
+            <label for="traveler-amount">How many people will be traveling?</label>
+            <input type="number" name="traveler-amount" value="" required>
+            <button class="modal__btn modal__btn-primary" id="formSubmit" data-micromodal-close aria-label="Submit and Close this dialog window">Book this trip</button>
+
+          </form>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+        </footer>
+      </div>
+    </div>
+  </div>
   <script src="bundle.js"></script>
 </body>
 </html>

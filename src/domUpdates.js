@@ -1,4 +1,7 @@
 import {destinationRepo, tripRepo, traveler, travelerLogin} from './apiRequests'
+import MicroModal from 'micromodal';
+
+MicroModal.init();
 
 let today = '2021/08/11'
 
@@ -8,13 +11,15 @@ const bookTripButton = document.getElementById('bookTripButton')
 const pendingGallery = document.getElementById('pendingGallery')
 const upcomingGallery = document.getElementById('upcomingGallery')
 const pastGallery = document.getElementById('pastGallery')
+const destinationOptions = document.getElementById('destinationOptions')
+
 
 const updateDom = () => {
   updateHeader()
   updateTripGallery(pendingGallery, 'pending');
   updateTripGallery(upcomingGallery, 'upcoming');
   updateTripGallery(pastGallery, 'past');
-
+  setDestinationOptions();
 }
 
 setTimeout(() => {
@@ -63,4 +68,12 @@ const buildTripCard = (trip, gallery) => {
       <p>${trip.date}</p>
     </div>
   </article>`
+}
+
+const setDestinationOptions = () => {
+  destinationOptions.innerHTML = "";
+  destinationRepo.destinations.forEach(destination => {
+    destinationOptions.innerHTML += `<option value="${destination.destination}">${destination.destination}</option>`
+  });
+
 }
