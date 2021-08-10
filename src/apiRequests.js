@@ -54,9 +54,4 @@ const sendTripInfo = (trip) => {
   .catch(err => console.log(err));
 }
 
-
-let trip = {id: 8000, userID: 2, destinationID: 3, travelers: 2, date:'2022/3/20', duration: 6, status: 'pending', suggestedActivities: []}
-
-setTimeout(function() {sendTripInfo(trip)}, 4000);
-
 export { destinationRepo, tripRepo, traveler, travelerLogin, sendTripInfo}
