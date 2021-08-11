@@ -4,7 +4,6 @@ import travelers from './sample-data/travelers';
 import trips from './sample-data/trips';
 import destinations from './sample-data/destinations';
 import Traveler from '../src/classes/Traveler';
-import Trip from '../src/classes/Trip';
 import TripRepository from '../src/classes/TripRepository'
 import DestinationRepository from '../src/classes/DestinationRepository';
 
