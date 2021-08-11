@@ -1,4 +1,4 @@
-import {destinationRepo, tripRepo, traveler, travelerLogin, sendTripInfo} from './apiRequests'
+import {destinationRepo, traveler, travelerLogin, sendTripInfo} from './apiRequests'
 import MicroModal from 'micromodal';
 import Trip from './classes/Trip';
 
@@ -10,7 +10,6 @@ let today = '2021/08/11'
 // INDEX ELEMENTS
 const totalSpent = document.getElementById('totalSpent')
 const travelerName = document.getElementById('travelerName')
-const bookTripButton = document.getElementById('bookTripButton')
 const pendingGallery = document.getElementById('pendingGallery')
 const upcomingGallery = document.getElementById('upcomingGallery')
 const pastGallery = document.getElementById('pastGallery')
@@ -115,7 +114,7 @@ const submitTrip = () => {
     date: startDate.value.split("-").join("/"),
     duration: parseInt(tripDuration.value),
     status: 'pending',
-    suggestedActivities:[]
+    suggestedActivities: []
   }
   clearValues()
   sendTripInfo(trip)
@@ -159,7 +158,7 @@ const getTripEstimate = () => {
     date: startDate.value.split("-").join("/"),
     duration: parseInt(tripDuration.value),
     status: 'pending',
-    suggestedActivities:[]
+    suggestedActivities: []
   })
 
   getEstimateButton.innerText = `$${trip.calculateTripCost(destinationRepo)}`
